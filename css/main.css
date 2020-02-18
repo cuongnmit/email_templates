@@ -144,6 +144,7 @@ section.body {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    height: 100%;
   }
 }
 
@@ -163,13 +164,29 @@ section.body {
 
 .item .arrow {
   width: 100%;
-  opacity: 0;
+}
+
+.item .arrow .desktop {
+  display: none;
+}
+
+.item .arrow .mobile {
+  display: table;
+  margin: 0 auto;
 }
 
 @media only screen and (min-width: 500px) {
   .item .arrow {
     width: 20px;
-    opacity: 1;
+    display: table;
+    height: 100%;
+  }
+  .item .arrow .mobile {
+    display: none;
+  }
+  .item .arrow .desktop {
+    display: table-cell;
+    vertical-align: middle;
   }
 }
 

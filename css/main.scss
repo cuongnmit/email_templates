@@ -114,6 +114,7 @@ section.body {
     @media only screen and (min-width: 500px) {
         display: flex;
         flex-direction: row;
+        height: 100%;
     }
 
     .before {
@@ -130,10 +131,29 @@ section.body {
 
     .arrow {
         width: 100%;
-        opacity: 0;
+
+        .desktop {
+            display: none;
+        }
+
+        .mobile {
+            display: table;
+            margin: 0 auto;
+        }
+
         @media only screen and (min-width: 500px) {
             width: 20px;
-            opacity: 1;
+            display: table;
+            height: 100%;
+
+            .mobile {
+                display: none;
+            }
+
+            .desktop {
+                display: table-cell;
+                vertical-align: middle;
+            }
         }
     }
 
