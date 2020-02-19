@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Email Templates | Deleted</title>
+    <!-- <link rel="stylesheet" href="./css/main.css"> -->
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            padding: 10px 20px 20px;
+            background-color: #f1f1f1;
+        }
+
+        .header {
+            display: table;
+        }
+
+        .header .image {
+            display: table-cell;
+            vertical-align: middle;
+            padding-right: 10px;
+        }
+
+        .header .title {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: justify;
+        }
+
+        .header .avatar {
+            width: 45px;
+            height: 45px;
+        }
+
+        .text-upper-case {
+            text-transform: uppercase;
+        }
+
+        .text-danger {
+            color: #D9001B;
+        }
+
+        .d-table {
+            display: table;
+        }
+
+        .d-flex {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        .ticket-list {
+            width: calc(100% - 250px);
+        }
+
+        .ticket-list__item {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        .ticket-list__item p {
+            width: calc(100% - 60px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        @media only screen and (min-width: 500px) {
+            .ticket-list__item p {
+                white-space: inherit;
+            }
+        }
+
+        .ticket-list__item a {
+            width: 60px;
+            font-weight: 700;
+            color: #337AB7;
+            text-decoration: underline;
+        }
+
+        .w-250p {
+            width: 250px;
+        }
+
+        .d-table-cell {
+            display: table-cell;
+        }
+
+        .vertical-align-middle {
+            vertical-align: middle;
+        }
+
+        .deleted {
+            padding-right: 40px;
+        }
+
+        .deleted__item {
+            line-height: 40px;
+            border-bottom: 1px solid #e4e4e4;
+        }
+
+        .list-item {
+            line-height: 40px;
+            border-bottom: 1px solid #e4e4e4;
+        }
+
+        section.body {
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        .ticket-type {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        .box {
+            margin-top: 20px;
+        }
+
+        .box__header {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%;
+            height: 35px;
+            background-color: #c4d9e6;
+            border-radius: 5px 5px 0 0;
+        }
+
+        @media only screen and (min-width: 500px) {
+            .box__header {
+                width: 300px;
+            }
+        }
+
+        .box__header span {
+            padding-left: 10px;
+            line-height: 35px;
+        }
+
+        .box__body {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%;
+            min-height: 80px;
+            border: 1px solid #e4e4e4;
+            padding: 10px 0;
+        }
+
+        @media only screen and (min-width: 500px) {
+            .box__body {
+                border-radius: 0 5px 5px 5px;
+            }
+        }
+
+        .box__footer {
+            margin-top: 10px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        .box__footer * {
+            padding-right: 5px;
+            height: 100%;
+        }
+
+        .btn-detail {
+            font-size: 12px;
+            text-decoration: none;
+            border-radius: 12px;
+            background-color: #4099ff;
+            color: #fff !important;
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: 0 10px;
+            line-height: 1.5;
+            height: 20px;
+        }
+
+        .items {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+        .item {
+            display: block;
+            min-height: 20px;
+            padding: 0 10px;
+            text-align: justify;
+            line-height: 1.2;
+        }
+
+        @media only screen and (min-width: 500px) {
+            .item {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                flex-direction: row;
+                height: 100%;
+            }
+        }
+
+        .item .before {
+            background-color: #ffebe6;
+            padding: 2px 10px;
+            margin-right: 5px;
+            width: 100%;
+            text-decoration: line-through;
+        }
+
+        @media only screen and (min-width: 500px) {
+            .item .before {
+                max-width: 45%;
+            }
+        }
+
+        .item .arrow {
+            width: 100%;
+        }
+
+        .item .arrow .desktop {
+            display: none;
+        }
+
+        .item .arrow .mobile {
+            display: table;
+            margin: 0 auto;
+        }
+
+        @media only screen and (min-width: 500px) {
+            .item .arrow {
+                width: 20px;
+                display: table;
+                height: 100%;
+            }
+
+            .item .arrow .mobile {
+                display: none;
+            }
+
+            .item .arrow .desktop {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+
+        .item .after {
+            background-color: #e3fcef;
+            padding: 2px 10px;
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 500px) {
+            .item .after {
+                margin-left: 5px;
+                max-width: calc(100% - 45% - 30px);
+            }
+        }
+
+        .footer {
+            margin-top: 10px;
+            font-size: 12px;
+            color: grey;
+            line-height: 1.5;
+        }
+
+        /*# sourceMappingURL=main.css.map */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <section class="header">
+            <div class="image">
+                <img class="avatar" src="https://vietid.vcmedia.vn/vietid/image/avatars/default.png" alt="">
+            </div>
+            <div class="title">
+                <p><b class="text-upper-case text-danger">Hủy Ticket</b>: <b>Nguyễn Bảo Trâm</b> đã hủy <b>Ticket
+                        23300</b>.</p>
+            </div>
+        </section>
+        <section class="body">
+            <p>Kiểm tra pháp lý bài viết</p>
+            <p>Duyệt bài - Kênh 14 - Nhãn Xing Fu Tang - Bài loại 2 Home web - CM phù hợp - time 21/08</p>
+            <div class="box">
+                <div class="box__header">
+                    <span class="text-upper-case">Thông tin hủy</span>
+                </div>
+                <div class="box__body">
+                    <div class="items">
+                        <ul class="deleted">
+                            <li class="deleted__item"><b>Trạng thái</b>: Hủy</li>
+                            <li class="deleted__item"><b>Lý do hủy</b>: PC cf ĐKKD của hộ KD Trung Nguyễn (Đ/c: 437 Sư
+                                Vạn Hạnh, HCM)</li>
+                            <li class="deleted__item"><b>Đối tượng hủy</b>: Sale</li>
+                            <li class="deleted__item"><b>Tên nhãn</b>: Cocacola</li>
+                            <li class="deleted__item"><b>Sale</b>: nguyenmanhcuong03@vccorp.vn</li>
+                            <li class="deleted__item"><b>Người hủy</b>: nguyenmanhcuong03@vccorp.vn</li>
+                            <li class="deleted__item d-flex">
+                                <div class="d-table">
+                                    <b class="d-table-cell vertical-align-middle w-250p">Các ticket liên quan bị
+                                        hủy:</b>
+                                </div>
+                                <div class="ticket-list">
+                                    <div class="ticket-list__item">
+                                        <p>#5231.1 - Duyệt bài - Afamily - Đẹp - 10,000,000 VNÐ - Son YURIKA -
+                                            21-08-2019 - DB566210819 Duyệt bài - Afamily - Đẹp - 10,000,000 VNÐ - Son
+                                            YURIKA - 21-08-2019 - DB566210819 Duyệt bài - Afamily - Đẹp - 10,000,000 VNÐ
+                                            - Son YURIKA - 21-08-2019 - DB566210819</p>
+                                        <a href="#">Chi tiết</a>
+                                    </div>
+                                    <div class="ticket-list__item">
+                                        <p>#5231.1 - Duyệt bài - Afamily - Đẹp - 10,000,000 VNÐ - Son YURIKA -
+                                            21-08-2019 - DB566210819</p>
+                                        <a href="#">Chi tiết</a>
+                                    </div>
+                                    <div class="ticket-list__item">
+                                        <p>#5231.1 - Duyệt bài - Afamily - Đẹp - 10,000,000 VNÐ - Son YURIKA -
+                                            21-08-2019 - DB566210819</p>
+                                        <a href="#">Chi tiết</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box__footer">
+                    <i>Bạn có thể xem chi tiết </i>
+                    <a class="btn-detail" href="#">Tại đây</a>
+                </div>
+            </div>
+        </section>
+        <section class="footer">
+            <p>Địa chỉ: Tầng 19, Center Building Hapulico Complex, Số 1 Nguyễn Huy Tưởng, Thanh Xuân, Hà Nội</p>
+            <p>Điện thoại: (844) 7307 7979 | Fax: (844) 7307 7980</p>
+            <p>Email: contact@admicro.vn</p>
+        </section>
+    </div>
+</body>
+
+</html>

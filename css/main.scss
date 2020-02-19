@@ -1,3 +1,7 @@
+$header-height-desktop: 45px;
+$header-padding-desktop: 10px;
+$text-danger: #D9001B;
+
 html, body {
     padding: 0;
     margin: 0;
@@ -14,35 +18,106 @@ p {
 
 .container {
     width: 100%;
-    padding: 20px;
+    padding: 10px 20px 20px;
     background-color: #f1f1f1;
 }
 
 .header {
-    display: flex;
+    display: table;
+    // padding: $header-padding-desktop 0;
+
+    .image {
+        display: table-cell;
+        vertical-align: middle;
+        padding-right: 10px;
+    }
 
     .title {
-        line-height: 1.5;
-
-        @media only screen and (min-width: 500px) {
-            line-height: 2.5;
-        }
+        display: table-cell;
+        vertical-align: middle;
+        text-align: justify;
     }
-}
 
-.avatar {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+    .avatar {
+        width: $header-height-desktop;
+        height: $header-height-desktop;
+    }
 }
 
 .text-upper-case {
     text-transform: uppercase;
 }
 
+.text-danger {
+    color: $text-danger;
+}
+
+.d-table {
+    display: table;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.ticket-list {
+    width: calc(100% - 250px);
+    &__item {
+        display: flex;
+
+        p {
+            width: calc(100% - 60px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            @media only screen and (min-width: 500px) {
+                white-space: inherit;
+            }
+        }
+
+        a {
+            width: 60px;
+            font-weight: 700;
+            color: #337AB7;
+            text-decoration: underline;
+        }
+    }
+}
+
+.w-250p {
+    width: 250px;
+}
+
+.d-table-cell {
+    display: table-cell;
+}
+
+.vertical-align-middle {
+    vertical-align: middle;
+}
+
+.deleted {
+    padding-right: 40px;
+
+    &__item {
+        line-height: 40px;
+        border-bottom: 1px solid #e4e4e4;
+    }
+}
+
+.list-item {
+    line-height: 40px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
 section.body {
     background-color: #fff;
     padding: 20px;
+}
+
+.ticket-type {
+    display: flex;
 }
 
 .box {
@@ -77,8 +152,12 @@ section.body {
 
     &__footer {
         margin-top: 10px;
-        display: inline-block;
-        line-height: 24px;
+        display: flex;
+
+        * {
+            padding-right: 5px;
+            height: 100%;
+        }
     }
 }
 
@@ -93,9 +172,9 @@ section.body {
     vertical-align: middle;
     user-select: none;
     border: 1px solid transparent;
-    padding: 2px 5px;
+    padding: 0 10px;
     line-height: 1.5;
-    margin-left: 5px;
+    height: 20px;
 }
 
 .items {
