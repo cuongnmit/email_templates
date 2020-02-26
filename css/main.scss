@@ -97,7 +97,8 @@ p {
     vertical-align: middle;
 }
 
-.deleted {
+.list {
+    width: 100%;
     padding-right: 40px;
 
     &__item {
@@ -142,7 +143,7 @@ section.body {
     &__body {
         display: flex;
         width: 100%;
-        min-height: 80px;
+        min-height: 50px;
         border: 1px solid #e4e4e4;
         @media only screen and (min-width: 500px) {
             border-radius: 0 5px 5px 5px;
@@ -161,20 +162,72 @@ section.body {
     }
 }
 
-.btn-detail {
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
     font-size: 12px;
-    text-decoration: none;
+    line-height: 1;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+.btn-danger {
+    color: #fff !important;
+    background-color: #dc3545;
+    border-color: #dc3545;
+
+    &:hover {
+        color: #fff;
+        background-color: #c82333;
+        border-color: #bd2130;
+    }
+}
+
+.btn-success {
+    color: #fff !important;
+    background-color: #28a745;
+    border-color: #28a745;
+
+    &:hover {
+        color: #fff;
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+}
+
+.pay-result {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+
+    .btn-reject {
+        margin-right: 10px;
+    }
+}
+
+.btn-detail {
     border-radius: 12px;
     background-color: #4099ff;
     color: #fff !important;
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    user-select: none;
-    border: 1px solid transparent;
+    font-size: 12px;
     padding: 0 10px;
     line-height: 1.5;
     height: 20px;
+
+    &:hover {
+        background-color: darken($color: #4099ff, $amount: 10%);
+    }
 }
 
 .items {
@@ -194,6 +247,7 @@ section.body {
         display: flex;
         flex-direction: row;
         height: 100%;
+        width: 100%;
     }
 
     .before {
