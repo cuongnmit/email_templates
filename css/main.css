@@ -114,7 +114,7 @@ p {
 }
 
 .list__item {
-  line-height: 40px;
+  padding: 10px 0;
   border-bottom: 1px solid #e4e4e4;
 }
 
@@ -377,7 +377,7 @@ section.body {
   line-height: 1.5;
 }
 
-p, span {
+p, span, i {
   color: #222 !important;
 }
 
